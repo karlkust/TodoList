@@ -1,9 +1,13 @@
 import TodoList from "../TodoList/TodoList";
 
-const Main = ({ todos }) => {
+const Main = ({ todos, deleteTodo, completedTodo }) => {
   return (
     <div>
-      <TodoList todos={todos} />
+      <TodoList
+        completedTodo={completedTodo}
+        deleteTodo={deleteTodo}
+        todos={todos}
+      />
     </div>
   );
 };

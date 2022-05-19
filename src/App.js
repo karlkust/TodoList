@@ -18,11 +18,33 @@ function App() {
     ]);
   };
 
+  const deleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  const completedTodo = (id) => {
+    setTodos((prev) =>
+      prev.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      })
+    );
+  };
+
   return (
     <div className="container py-5">
       <Header addNewTodo={addNewTodo} />
       <hr />
-      <Main todos={todos} />
+      <Main
+        completedTodo={completedTodo}
+        deleteTodo={deleteTodo}
+        todos={todos}
+      />
       <Footer />
     </div>
   );

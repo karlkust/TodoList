@@ -1,14 +1,18 @@
 import TodoItem from "../TodoItem/TodoItem";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, deleteTodo, completedTodo }) => {
   return (
     <ul className="list-group">
-      {todos.map((todo) => {
+      {todos.map((todo, i) => {
         return (
           <TodoItem
+            key={todo.id}
+            completedTodo={completedTodo}
+            deleteTodo={deleteTodo}
+            index={i}
             id={todo.id}
             title={todo.title}
-            complited={todo.complited}
+            completed={todo.completed}
           />
         );
       })}
