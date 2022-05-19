@@ -35,7 +35,7 @@ const Form = ({ addNewTodo }) => {
       </div>
 
       <button type="submit" className="btn btn-primary">
-        Add Todo
+        Добавить задачу
       </button>
     </form>
   );
