@@ -1,9 +1,9 @@
 import TodoList from "../TodoList/TodoList";
 
-const Main = () => {
+const Main = ({ todos }) => {
   return (
     <div>
-      <TodoList />
+      <TodoList todos={todos} />
     </div>
   );
 };

@@ -7,8 +7,21 @@ const Form = ({ addNewTodo }) => {
     setTitle(e.target.value);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    let newTitle = title.trim();
+    if (newTitle) {
+      addNewTodo(newTitle);
+      setTitle("");
+    }
+  };
+
   return (
-    <form className="d-flex flex-column align-items-center">
+    <form
+      onSubmit={submitHandler}
+      className="d-flex flex-column align-items-center"
+    >
       <div className="mb-3">
         <input
           onChange={changeHandler}

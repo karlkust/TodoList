@@ -21,7 +21,8 @@ function App() {
   return (
     <div className="container py-5">
       <Header addNewTodo={addNewTodo} />
-      <Main />
+      <hr />
+      <Main todos={todos} />
       <Footer />
     </div>
   );
