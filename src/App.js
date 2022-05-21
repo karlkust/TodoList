@@ -4,6 +4,8 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 
+const history = [];
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -37,7 +39,12 @@ function App() {
   };
 
   const clearTodos = () => {
+    history.push(todos);
     setTodos([]);
+  };
+
+  const returnToPrevState = () => {
+    setTodos(history.pop());
   };
 
   return (
@@ -49,7 +56,7 @@ function App() {
         deleteTodo={deleteTodo}
         todos={todos}
       />
-      <Footer clearTodos={clearTodos} />
+      <Footer returnToPrevState={returnToPrevState} clearTodos={clearTodos} />
     </div>
   );
 }
