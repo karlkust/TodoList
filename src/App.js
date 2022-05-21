@@ -36,6 +36,10 @@ function App() {
     );
   };
 
+  const clearTodos = () => {
+    setTodos([]);
+  };
+
   return (
     <div className="container py-5">
       <Header addNewTodo={addNewTodo} />
@@ -45,7 +49,7 @@ function App() {
         deleteTodo={deleteTodo}
         todos={todos}
       />
-      <Footer />
+      <Footer clearTodos={clearTodos} />
     </div>
   );
 }
